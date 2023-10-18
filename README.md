@@ -126,7 +126,7 @@ En apimock.js agregamos la funcion de añadir puntos  y la llamamos en la funcio
 2. Entrar a la carpeta y desde donde esta el archivo pom abrir una consola
 3. Usar el comando : mvn compile
 4. Usar el comando :mvn spring-boot:run
-5. Desde cualquier browser entrar a https://localhost:8080/index.html
+5. Desde cualquier browser entrar a localhost:8080/index.html
 
 ### Criterios de evaluación
 
