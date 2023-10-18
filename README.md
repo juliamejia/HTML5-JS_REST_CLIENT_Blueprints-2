@@ -89,9 +89,13 @@ En apimock.js agregamos la funcion de añadir puntos  y la llamamos en la funcio
 	2. Hacer GET a este mismo recurso, para actualizar el listado de planos y el puntaje del usuario.  
     	
     	<img width="721" alt="image" src="https://github.com/juliamejia/HTML5-JS_REST_CLIENT_Blueprints-2/assets/98657146/bffbf093-515e-42c6-a102-35ee2bf26a14">  
+     
      	Al hacer click eb create a new blueprint nos muestra una ventana donde pondremos el nombre de la obra que queramos crear  
+      
       	<img width="272" alt="image" src="https://github.com/juliamejia/HTML5-JS_REST_CLIENT_Blueprints-2/assets/98657146/317963ec-399f-4094-b4cd-4582e158faf6">  
+       
        	Y vemos que se crea  
+	
        	<img width="374" alt="image" src="https://github.com/juliamejia/HTML5-JS_REST_CLIENT_Blueprints-2/assets/98657146/656d8b19-0550-40d1-a062-d202a504b3fc">  
 
 5. Agregue el botón 'DELETE', de manera que (también con promesas):
