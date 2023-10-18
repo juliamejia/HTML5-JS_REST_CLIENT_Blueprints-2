@@ -121,6 +121,13 @@ En apimock.js agregamos la funcion de añadir puntos  y la llamamos en la funcio
 	         }
 	```
 
+### EJECUCION 
+1. clonar el repositorio con : git clone https://github.com/juliamejia/HTML5-JS_REST_CLIENT_Blueprints-2.git
+2. Entrar a la carpeta y desde donde esta el archivo pom abrir una consola
+3. Usar el comando : mvn compile
+4. Usar el comando :mvn spring-boot:run
+5. Desde cualquier browser entrar a https://localhost:8080/index.html
+
 ### Criterios de evaluación
 
 1. Funcional
