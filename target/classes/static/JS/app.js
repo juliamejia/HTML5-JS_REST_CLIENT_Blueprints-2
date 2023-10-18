@@ -16,11 +16,11 @@ var app = (function (){
         if (author === "") {
             alert("Debe ingresar un nombre");
         } else {
-            apiclient.getBlueprintsByAuthor(author,parceroData);
+            apiclient.getBlueprintsByAuthor(author,datos);
         }
      }
 
-     var parceroData = function( data) {
+     var datos = function( data) {
          $("#table tbody").empty();
          if (data === undefined) {
              alert("No existe el autor");
@@ -50,10 +50,10 @@ var app = (function (){
                  author = $("#author").val();
                  blueprintName = data.id;
                  $("#nameblu").text("Current blueprint: " + blueprintName);
-                 apiclient.getBlueprintByAuthorAndName(author, blueprintName, pintaparcero);
+                 apiclient.getBlueprintByAuthorAndName(author, blueprintName, pintar);
              }
 
-         function pintaparcero(data) {
+         function pintar(data) {
                  const puntos = data.points;
                  var c = document.getElementById("myCanvas");
                  var ctx = c.getContext("2d");
@@ -62,10 +62,6 @@ var app = (function (){
                  for (let i = 1; i < puntos.length; i++) {
                      ctx.moveTo(puntos[i - 1].x, puntos[i - 1].y);
                      ctx.lineTo(puntos[i].x, puntos[i].y);
-//                     if (i === puntos.length - 1) {
-//                         ctx.moveTo(puntos[i].x, puntos[i].y);
-//                         ctx.lineTo(puntos[0].x, puntos[0].y);
-//                     }
                  }
                  ctx.stroke();
 
@@ -76,14 +72,8 @@ var app = (function (){
          function init(){
             let coords = canvas.getBoundingClientRect();
             apiclient.addPoints((event.clientX - (screen.width/2)), (event.clientY - Math.round(coords.top) - 1), author, blueprintName, getNameAuthorBlueprints);
-//            getNameAuthorBlueprints();
-            apiclient.getBlueprintByAuthorAndName(author, blueprintName, pintaparcero);
+            apiclient.getBlueprintByAuthorAndName(author, blueprintName, pintar);
          }
-
-//         function deleteBp(){
-//            apiclient.deleteBp(author, blueprintName, fun).then(deleteCanvas).then(getNameAuthorBlueprints)
-////            getNameAuthorBlueprints();
-//         }
         function deleteBp(){
          apiclient.deleteBp(author, blueprintName).then(() => {
          deleteCanvas();
@@ -106,12 +96,6 @@ var app = (function (){
             })
             .catch(err => console.log(err))
          }
-//        const promiseCreate = new Promise(function createBp(){
-//                                                      var bpName = prompt("Por favor digite el nombre del plano", "");
-//                                                      apiclient.createBp(author, bpName, fun)});
-
-
-
      return{
         createBp: createBp,
         deleteBp: deleteBp,
